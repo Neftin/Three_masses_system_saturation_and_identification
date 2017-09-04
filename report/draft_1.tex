@@ -1,0 +1,103 @@
+\documentclass[twosided,a4paper]{article}           %type
+\usepackage[top=2cm,bottom=2cm,inner=1.5cm,outer=1.5cm]{geometry}       %geometry
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[sfdefault, light]{roboto}
+
+%\usepackage[italian]{babel}                %font/language
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}                       %maths
+\usepackage{bm}
+\usepackage{amssymb}					   %for numbersets
+
+\usepackage{graphicx}
+\usepackage{epstopdf} 
+\usepackage{float}
+\usepackage{subfigure}
+
+\usepackage{tabularx}
+\usepackage{multirow}
+
+%  EXOTIC STUFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\TakeFourierOrnament}[1]{{%                         %
+		\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}    %
+\newcommand*{\danger}{\TakeFourierOrnament{66}}                  %          
+                                                                 %
+\usepackage{newunicodechar}
+
+\newcommand\Warning{%
+	\makebox[1.4em][c]{%
+		\makebox[0pt][c]{\raisebox{.1em}{\small!}}%
+		\makebox[0pt][c]{\color{red}\Large$\bigtriangleup$}}}
+
+\newunicodechar{⚠}{\Warning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\norm}[1]{\left \lvert \left \lvert #1 \right \rvert \right  \rvert}
+
+%rapid file input
+\newcommand{\rs}[1]{\input{result/#1.txt}}
+
+%create new environment with enumeration
+                    
+\newcounter{comment}[section]
+\newenvironment{comment}[1][]{\refstepcounter{comment}\par\medskip
+	\noindent \textbf{Comment~\thecomment. #1} }{\par}
+
+\newcounter{box}
+\newenvironment{scatola}[1]
+{\refstepcounter{box}
+\begin{center}
+		\begin{tabular}{|p{\linewidth}|}
+			\hline \textbf{Box~\thebox} #1  \\
+		}
+		{ 
+			 \\ \hline
+		\end{tabular} 
+	\end{center}
+ }
+
+\date{21/06/2017}
+
+%\usepackage{hyperref}
+
+%\usepackage{subfloat}
+%full packaging for image in eps finally
+\usepackage{textcomp}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{listings} 
+
+\newcommand{\tr}{^{{\bm \top}}}
+
+\newenvironment{sistema}%
+{\left\lbrace\begin{array}{@{}l@{}}}%
+	{\end{array}\right.}
+
+\begin{document}
+	
+	\title{\textcolor{Orange}{Thesis} - \textcolor{MidnightBlue}{Compensation of the actuator defections with flexible solutions: il problema della macchina del capo che ha un buco nella gomma e noi la ripareremo con il chewing gum}}
+	\author{Giammarco Valenti}
+	\maketitle
+
+
+\hrule
+\hrule
+\hrule
+
+\section{Global static antiwind up sysnthesis}
+This case, to be feasible, requires to satisfies two luyapunov equations for both the uncostrained closed loop (plant and control) and the open loop (Plant). in the case nc =1 and then the case in cui ncl = np, la condizione si può interpretare come una COMMON LUYAPUNOV FUNCION
+
+\begin{itemize}
+	\item Full authority o external! spiega bene con spazio di stato etc...
+\end{itemize}
+
+\section{static}
+the simplification is a trade off with the applicability.
+
+
+
+\end{document}
