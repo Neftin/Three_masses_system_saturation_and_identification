@@ -15,14 +15,20 @@ plant.B_q = -eye(2);      % B for the q disturbance
 plant.C = [ -0.4   0.5;   % C for y
              0.3  -0.4]; 
 
-plant.D_yu = zeros(2,2);  % D for u-y
-plant.D_yq = zeros(2,2);  % D for 
+plant.D_yu = zeros(2,2);  % D for u->y
+plant.D_yq = zeros(2,2);  % D for q->y
 
-Plant = ss(plant.A,[plant.B_u plant.B_q],plant.C, [plant.D plant.D);
-Plant.inputName  = {'U_1','U_2','q_1','q_2'};
-Plant.outputName = {'y_1','y_2'};
+Plant = ss(plant.A,[plant.B_u plant.B_q],plant.C, [plant.D_yu plant.D_yq]);
+nu = 2;
+nq = 2;
+ny = 2;
+u = nameExpand('u',nu);
+q = nameExpand('q',nq);
+y = nameExpand('y',ny);
+Plant.inputName  = {u{1:end} q{1:end}};
+Plant.outputName = {'y(1)','y(2)'};
 
-% controller
+%% controller
 nc          = 2;
 
 control.A   = zeros(nc);
@@ -44,14 +50,14 @@ control.C   = 0.01*control.D_y;
 
 Control = ss(control.A,[ control.B_y control.B_w control.B_v zeros(nc)], control.C, [ control.D_y control.D_w control.D_v eye(nc) ] );
 
-Control.InputName = {'y_1','y_2','w_1','w_2','v_1','v_2','v_3','v_4'};
-Control.outputName = {'U_1','U_2'};
+Control.InputName = {'y(1)','y(2)','w_1','w_2','v_1','v_2','v_3','v_4'};
+Control.outputName = {'u_1','u_2'};
 
 % cloop
-perfoSum_1   = sumblk('z_1 = y_1 - w_1',1);
-perfoSum_2   = sumblk('z_2 = y_2 - w_2',1);
+perfoSum_1   = sumblk('z_1 = y(1) - w_1',1);
+perfoSum_2   = sumblk('z_2 = y(2) - w_2',1);
 
-UncoCloopBLO = (connect(Plant,Control,perfoSum_1,perfoSum_2,{'w_1','w_2','q_1','q_2','v_1','v_2','v_3','v_4'},{'y_1','y_2','z_1','z_2'},{'U_1','U_2'}));
+UncoCloopBLO = (connect(Plant,Control,perfoSum_1,perfoSum_2,{'w_1','w_2','q(1)','q(2)','v_1','v_2','v_3','v_4'},{'y(1)','y(2)','z_1','z_2'},{'u_1','u_2'}));
 
 UncoCloop    = ss(UncoCloopBLO);
 
@@ -151,19 +157,19 @@ Q = sdpvar(4);
 % saturated closed loop quantities
     %find the input matrix of the deadzone nonlinearity: it must be the
     %same as the inputs to saturate (write it in the thesys)
-    temp    = getIOTransfer(UncoCloopBLO,{'q_1','q_2'},{'y_1','y_2','z_1','z_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'q(1)','q(2)'},{'y(1)','y(2)','z_1','z_2'});
     temp    = ss(temp);
     B_cl_q  = temp.B;
-    temp    = getIOTransfer(UncoCloopBLO,{'w_1','w_2'},{'U_1','U_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'w_1','w_2'},{'u_1','u_2'});
     temp    = ss(temp);
     C_cl_u  = temp.C;
-    temp    = getIOTransfer(UncoCloopBLO,{'q_1','q_2'},{'U_1','U_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'q(1)','q(2)'},{'u_1','u_2'});
     temp    = ss(temp);
     D_cl_uq = temp.D;
-    temp    = getIOTransfer(UncoCloopBLO,{'w_1','w_2'},{'U_1','U_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'w_1','w_2'},{'u_1','u_2'});
     temp    = ss(temp);
     D_cl_uw = temp.D;
-    temp    = getIOTransfer(UncoCloopBLO,{'q_1','q_2'},{'z_1','z_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'q(1)','q(2)'},{'z_1','z_2'});
     temp    = ss(temp);
     D_cl_zq = temp.D;
     temp    = getIOTransfer(UncoCloopBLO,{'w_1','w_2'},{'z_1','z_2'});
@@ -176,10 +182,10 @@ Q = sdpvar(4);
     ncl     = length(A_cl(:,1));
     nw      = length(D_cl_uw(1,:));
     % anti uindappo related quantities
-    temp    = getIOTransfer(UncoCloopBLO,{'v_1','v_2','v_3','v_4'},{'y_1','y_2','z_1','z_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'v_1','v_2','v_3','v_4'},{'y(1)','y(2)','z_1','z_2'});
     temp    = ss(temp);
     B_cl_v  = temp.B;
-    temp    = getIOTransfer(UncoCloopBLO,{'v_1','v_2','v_3','v_4'},{'U_1','U_2'});
+    temp    = getIOTransfer(UncoCloopBLO,{'v_1','v_2','v_3','v_4'},{'u_1','u_2'});
     temp    = ss(temp);
     D_cl_uv = temp.D;
     temp    = getIOTransfer(UncoCloopBLO,{'v_1','v_2','v_3','v_4'},{'z_1','z_2'});

@@ -19,10 +19,19 @@ plant.D_yu = zeros(2,2);  % D for u->y
 plant.D_yq = zeros(2,2);  % D for q->y
 
 Plant = ss(plant.A,[plant.B_u plant.B_q],plant.C, [plant.D_yu plant.D_yq]);
-Plant.inputName  = {'q(1)','q(2)'};
-Plant.outputName = {'y(1)','y(2)'};
+% numbers of input output states
+    nu = 2;
+    nq = 2;
+    ny = 2;
+% create cell arrays of names
+    u = nameExpand('u',nu);
+    q = nameExpand('q',nq);
+    y = nameExpand('y',ny);
+% name the plant quantities
+Plant.inputName  = {u{1:end} q{1:end}};
+Plant.outputName = y;
 
-% controller
+%% controller
 nc          = 2;
 
 control.A   = zeros(nc);
@@ -44,9 +53,14 @@ control.C   = 0.01*control.D_y;
 
 Control = ss(control.A,[ control.B_y control.B_w control.B_v zeros(nc)], control.C, [ control.D_y control.D_w control.D_v eye(nc) ] );
 
-Control.InputName = {'y(1)','y(2)','w_1','w_2','v_1','v_2','v_3','v_4'};
-Control.outputName = {'u_1','u_2'};
-
+nv = nu + nc; % anti wind up signals
+% new names
+    v = nameExpand('v',nv);
+    w = nameExpand('w',ny);
+% define names
+Control.InputName = {y{1:end},w{1:end},v{1:end}};
+Control.outputName = u;
+%%
 % cloop
 perfoSum_1   = sumblk('z_1 = y(1) - w_1',1);
 perfoSum_2   = sumblk('z_2 = y(2) - w_2',1);
