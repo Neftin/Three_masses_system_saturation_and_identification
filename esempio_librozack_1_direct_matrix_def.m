@@ -17,7 +17,7 @@ A_p = [ -0.01     0   % plant
            0    -0.01];
          
 B_p_u         =  eye(nu);       % B for the u input   
-B_p_w         = zeros(nq);      % B for the q disturbance (w in the book)
+B_p_w         =  zeros(nq);      % B for the q disturbance (w in the book)
 
 
 C_p_y         = [ -0.4   0.5;   % C for y
