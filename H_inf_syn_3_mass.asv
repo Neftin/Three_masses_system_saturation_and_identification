@@ -9,13 +9,8 @@ figure(1)
 bode(idtf3);
 grid on;
 
-%_________CHOOSE YOUR PLANT____________
-
-run('./dida/threemass_fake_soft')
-
-             G = smoll;
-             
-             
+%_________CHOOSE YOUR PLANT__________________
+G = idtf3;
 
 G.u = 'u';
 G.y = 'y';
@@ -32,9 +27,7 @@ Fo = tf([a0],[1 a0]);
 
 CoFo = series(Co,Fo);
 
-%____________choose your pass-band________________
-               wc = 10;   
-
+wc = 30;                            % target crossover frequency (è un fottuto hard drive dev'esse straveloce
 s = tf('s');                        % trucchetto per definire le funzioni di trasferimento direttamente con s
 LS = (1+0.001*s/wc)/(0.001+s/wc);   % funzione finale target (bi-proper) no marginally
 

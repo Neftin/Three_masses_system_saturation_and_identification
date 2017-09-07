@@ -1,16 +1,7 @@
 
-% control definition
+% from simulink, it is TEMPORARY a main is required
 
+sim('AW_1.slx')
 
-
-% system definition
-
-load('sys3_tf.mat');
-
-Plant = ss(idtf3);
-
-% saturation definition
-
-figure(6),step(Plant)
-
-% 
+plot(x3_output_comparison.time,x3_output_comparison.signals.values);
+grid minor;

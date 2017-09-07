@@ -6,7 +6,7 @@ ts = 0.005;
 
 enc_counts2m = 7.252372446811487e+06;
 
-load('data_1/force_i2N.mat')
+load('data_1/force_i2N.mat') %  convertion factor between FORCE and SIGNAL 
 
 %% 
 % load('sweep.mat')
