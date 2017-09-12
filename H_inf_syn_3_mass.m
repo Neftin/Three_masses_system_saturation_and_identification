@@ -1,21 +1,31 @@
 
+%  #######################################################
+%  #  _______   __  _____ ______ _______ _ ____   _____  #
+%  #         \ |  |   ___|   ___|__   __| |    \ |       #
+%  #          \|  |  __| |  __|    | |  | |     \|       #
+%  #       |\     | |____| |       | |  | |   |\         #
+%  #  _____| \____| _____|_|       |_|  |_|___| \______  #
+%  #                                                     #
+%  #######################################################
+
 %% H - infinity systhesys for the 3-mass system
 set(0,'DefaultFigureWindowStyle','docked')
 clear all;
 % IMPLEMENTA IL PULITORE DI ZERI E IL DE-IMMAGINATORE
-
-load('sys3_tf.mat'); % the Plant
-figure(1)
-bode(idtf3);
-grid on;
+load('data_4/sys1_tf.mat'); % the Plant
+load('data_4/sys2_tf.mat'); % the Plant
+load('data_3/sys3_tf.mat'); % the Plant FROM NEW DATA
 
 %_________CHOOSE YOUR PLANT____________
 
 run('./dida/threemass_fake_soft')
 
-             G = smoll;
+              %G = idtf2;
+              G = smoll;
+
              
-             
+figure(1)
+bode(G);
 
 G.u = 'u';
 G.y = 'y';
@@ -33,7 +43,7 @@ Fo = tf([a0],[1 a0]);
 CoFo = series(Co,Fo);
 
 %____________choose your pass-band________________
-               wc = 10;   
+               wc = 20;   
 
 s = tf('s');                        % trucchetto per definire le funzioni di trasferimento direttamente con s
 LS = (1+0.001*s/wc)/(0.001+s/wc);   % funzione finale target (bi-proper) no marginally
@@ -69,7 +79,6 @@ COpid  = getBlockValue(StatoSveglio,'COpid');
 aa     = getBlockValue(StatoSveglio,'a0');
 F      = tf([aa],[1 aa]);
 
-
 C = series(COpid,F);
 
 tf(C)
@@ -81,8 +90,10 @@ title('Open-loop response'), legend('Target','Actual')
 figure(4)
 step(feedback(G*C,1)), grid, title('Closed-loop response')
 
-GG = ss(G);
+CLGC = feedback(G*C,1);
 
-CC = ss(C);
+GG   = ss(G); %per il main
+
+CC   = ss(C); %per il main
 
 
