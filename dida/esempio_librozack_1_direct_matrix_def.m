@@ -3,7 +3,7 @@ clear all;
 % IMPLEMENTA IL PULITORE DI ZERI E IL DE-IMMAGINATORE
 
 %% Plant definition
-fintozero = 0.00001;
+fintozero = 0.00000000001;
 
 nu = 2;
 nq = 2;

@@ -12,16 +12,18 @@
 set(0,'DefaultFigureWindowStyle','docked')
 clear all;
 % IMPLEMENTA IL PULITORE DI ZERI E IL DE-IMMAGINATORE
-load('data_4/sys1_tf.mat'); % the Plant
-load('data_4/sys2_tf.mat'); % the Plant
-load('data_3/sys3_tf.mat'); % the Plant FROM NEW DATA
+load('data_5/sys1_tf.mat'); % the Plant
+load('data_5/sys2_tf.mat'); % the Plant
+load('data_5/sys3_tf.mat'); % the Plant FROM NEW DATA
+load('data_5/la_speranza.mat');
 
 %_________CHOOSE YOUR PLANT____________
 
 run('./dida/threemass_fake_soft')
 
               %G = idtf2;
-              G = smoll;
+              %G = smoll;
+              G = non_deludermi;
 
              
 figure(1)
