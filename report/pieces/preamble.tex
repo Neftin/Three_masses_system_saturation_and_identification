@@ -2,6 +2,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[sfdefault, light]{roboto}
 
+\usepackage[a-1b]{pdfx}
+
 %\usepackage[italian]{babel}                %font/language
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -19,10 +21,13 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 
-\usepackage{color}
-\usepackage[dvipsnames]{xcolor}            %colors
+%\usepackage{color}
+\usepackage[dvipsnames,cmyk]{xcolor}            %colors
+
 
 \usepackage{listings} 
+
+
 
 
 %  EXOTIC STUFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,7 +81,10 @@
 {\left\lbrace\begin{array}{@{}l@{}}}%
 	{\end{array}\right.}
 
-
+\newcommand{\veton}{\begin{bmatrix}} %start a vector
+\newcommand{\vetoff}{\end{bmatrix}}   %end a vector
+\newcommand{\maton}{\begin{bmatrix}}   %start a matrix
+\newcommand{\matoff}{\end{bmatrix}}  %end a matrix 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% section titling
 
 \usepackage[explicit]{titlesec} % per formato custom dei titoli dei capitoli
@@ -85,6 +93,7 @@
 
 \definecolor{DarkBlue}{RGB}{0,0,102}
 \definecolor{DarkColdGray}{RGB}{100,100,150}
+\definecolor{LimeGreen}{cmyk}{.50,0,1,.20}
 
 \newcommand{\colorChapter}{LimeGreen} % color of the Chapter title 
 \newcommand{\colorSection}{DarkBlue}  % color of the Section title
@@ -93,7 +102,7 @@
 %%% titles format
 
     \titleformat{\chapter}
-{\normalfont\Huge\bfseries}{}{1em}{\filcenter \textcolor{\colorChapter}{#1} \textcolor{\colorChapter}{\thechapter}}
+{\normalfont\Huge\bfseries}{}{1em}{\textcolor{\colorChapter}{\thechapter} \textcolor{\colorSection}{|} \filcenter \textcolor{\colorChapter}{#1}}
 
     \titleformat{\section}
 {\normalfont\large\bfseries}{\textcolor{\colorSection}{#1} }{1em}{\hfill \textcolor{\colorSection}{\thesection}}
@@ -107,7 +116,5 @@
 \titlespacing*{\section}{0pt}{1em}{1em}
 \titlespacing*{\subsection}{0pt}{1em}{1em}
 
-%%% nomi ripetuti che si possono cambiare
-
-
+%%% 
 

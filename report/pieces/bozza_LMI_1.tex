@@ -1,0 +1,48 @@
+
+% from LUYA constraint to LMI
+
+\chapter{LMI per uomini veri}
+
+Partiamo dalla definizione generale del sistema con solamente lo spazio di stato senza inut ma solo con un input d che può essere un disturbo o un riferimento di errore. (ad esempio se chiudiamo il loop se abbiamo un segnale riferimento $w(t)$ d può ricoprire il ruolo di $d(t) = w(t) - y(t)$ dove y è il feedback del valore di output da portare a riferimento). Il sistema è definitio in \eqref{eq:sys_gen}.
+\begin{equation}
+\label{eq:sys_gen}
+	\begin{sistema}
+	\dot{x} = \bar{A}x + \bar{B}_d d\\
+	z       = \bar{C}x + \bar{D}_d d
+	\end{sistema}
+\end{equation}
+Definiamo la funzione quadratica di Luyapunov  $V(x) = x\tr P x$. la condizione di negatività sulla derivata prima nel tempo garantisce la Global Exponential Stability (GES) del sistema ($\dot{V}(x) < 0$). La condizione si può ``estendere'' per comprendere l'andamento di $z$ rispetto a $w$, la condizione estesa è mostrata in \eqref{eq:imbuto_sys_gen}.
+\begin{equation}
+\label{eq:imbuto_sys_gen}
+	\dot{V} + \dfrac{1}{\gamma^2}z\tr z - w\tr w < 0
+\end{equation}
+%TODO capire perchè si aggiungono così secchi z e w l_2
+La condizione \eqref{eq:imbuto_sys_gen} implica un limite superiore della norma di $z$. L'implicazione si ottiene integrando l'equazione \eqref{eq:imbuto_sys_gen} da $0$ a $\infty$, come indicato dalle equazioni: \eqref{eq:imbuto_sys_gen_int} e \eqref{eq:L2gain_sys_gen}. Il sistema è GES perciò $V(\infty) = 0$. 
+\begin{equation}
+\label{eq:imbuto_sys_gen_int}
+	\int_{0}^{\infty}\left (V(x) - V(0) + \dfrac{1}{\gamma^2}z\tr z - w\tr w    \right )dt < 0
+\end{equation}
+\begin{equation}
+\label{eq:L2gain_sys_gen}
+	\norm{z}_2^2 \leq \gamma^2\norm{w}^2_2 + \gamma^2 V(0)
+\end{equation}
+%TODO schema impianto solo d e z con H centrale di stati x, poi aggiungiamo la nonlinearità e poi lo antiwindappo
+La condizione \eqref{eq:imbuto_sys_gen} può essere scritta esplicitando la funzione quadratica di Luyapunov:
+\begin{equation}
+\label{eq:imbuto_sys_gen_luya}
+	2x\tr P\left  (\bar{A}x + \bar{B}_dd\right ) +  \dfrac{1}{\gamma^2}z\tr z - w\tr w < 0
+\end{equation}
+Ora raccogliendo il vettore $ \veton & x & d & \vetoff \tr $ si ottiene:
+\begin{equation}
+	2  \veton x \\ d \vetoff \maton P\bar{A} & P \bar{B}_d \\ 0 & -I/2 \matoff  \veton x \\ d \vetoff 
+	+ \dfrac{1}{\gamma^2} \left ( \veton \bar{C} & \bar{D}_d \vetoff \veton x \\ d \vetoff \right ) \tr \left  ( \veton \bar{C} & \bar{D}_d \vetoff \veton x \\ d \vetoff \right ) < 0 
+\end{equation}
+\begin{equation}
+	\maton \bar{A}P + P\bar{A} & P \bar{B}_d \\ 0 & -I/2 \matoff + \dfrac{1}{\gamma^2}\veton \bar{C} \tr \\ \bar{D}_d \tr \vetoff \veton \bar{C}  & \bar{D}_d \vetoff
+\end{equation}
+\begin{equation}
+	He\maton \bar{A}P + P\bar{A} & P \bar{B}_d & 0 \\ 0 & -I & 0 \\ \bar{C} & \bar{D}_d & -\gamma^2 I  \matoff < 0
+\end{equation}
+%TODO definisci operatore He
+
+

@@ -1,5 +1,6 @@
 \select@language {italian}
 \select@language {italian}
-\contentsline {chapter}{\numberline {1}Il benchmark}{2}
-\contentsline {section}{\numberline {1.1}descrizione dell'apparato sperimentale}{2}
-\contentsline {chapter}{Bibliografia}{2}
+\contentsline {chapter}{\numberline {1}Il benchmark}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Descrizione dell'apparato sperimentale}{2}{section.1.1}
+\contentsline {chapter}{\numberline {2}LMI per uomini veri}{2}{chapter.2}
+\contentsline {chapter}{Bibliografia}{3}{equation.2.0.8}
