@@ -1,0 +1,1 @@
+Se non specificato il ni della strong well posedness è 0.3.

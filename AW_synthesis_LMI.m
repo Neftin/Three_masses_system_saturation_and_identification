@@ -118,7 +118,7 @@ D_cl_zv =  [ zeros(size(C_p_z,1),size(A_c,1)),      D_p_zu*Delta_u ];
 %% TRUE LMI's     season finale, on netflix
 
 % strong well posedness
-ni_swp = 0.3; 
+ni_swp = 0.001; 
 
 % reference: equation 17a,17b,18 on paper ZACK_the_proposition_2
 
@@ -131,7 +131,6 @@ nv  = size(A_c,1) + size(C_c,1); % number of the antiwind up inputs (full author
 nu  = size(C_c,1);
 
 s = 0.01;  % fixed ellipsoidal set of "warranty" x' Q^-1 x =< s^2.
-% strange BHV if s=4 feasible
 satValue = 3.6;
 
 % satValue from Degenerator test
