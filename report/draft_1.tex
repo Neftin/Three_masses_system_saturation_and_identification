@@ -14,23 +14,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % formato FRONTE RETRO
-\documentclass[epsfig,a4paper,11pt,titlepage,twoside,openany]{book}
+\documentclass[epsfig,a4paper,10pt,titlepage,twoside,openany]{book}
 
 \input{./pieces/preamble.tex} %my preamble
 
 \usepackage{plain}
 \usepackage{setspace}
 %\usepackage[paperheight=29.7cm,paperwidth=21cm,outer=1.5cm,inner=2.5cm,top=2cm,bottom=2cm]{geometry} % per definizione layout (DISI standard)
-\usepackage{titlesec} % per formato custom dei titoli dei capitoli
+
 
 \singlespacing
 
 \usepackage[italian]{babel}
 
 % titolo ed altre frasi ricorrenti
-\newcommand{\mytitle}{Sintesi e validazione sperimentale di tecniche di controllo anti-windup basate su linear matrix inequalities}
+\newcommand{\mytitle}{Sintesi e validazione sperimentale di tecniche di controllo anti-windup basate su linear matrix inequalities }
+\newcommand{\treM}{sistema masse-molle } % compatibile con articolo 'il'
 
 \begin{document}
+
 
   % nessuna numerazione
   \pagenumbering{gobble} 
@@ -66,13 +68,8 @@
       %   Titolo capitolo 
       % a formato
       %   X   Titolo capitolo
-      
-      \titleformat{\chapter}
-        {\normalfont\Huge\bfseries}{\thechapter}{1em}{}
         
-      \titlespacing*{\chapter}{0pt}{0.59in}{0.02in}
-      \titlespacing*{\section}{0pt}{0.20in}{0.02in}
-      \titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
+
       
       % sommario
       %\input{sommario}  
@@ -99,9 +96,7 @@
     \bibliographystyle{plain}
     \bibliography{biblio}
     
-    
-    \titleformat{\chapter}
-        {\normalfont\Huge\bfseries}{Allegato \thechapter}{1em}{}
+   
         
     % sezione Allegati - opzionale
     %\appendix

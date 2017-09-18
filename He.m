@@ -3,6 +3,5 @@ function [ HeMatrix ] = He( Matrix )
 
 HeMatrix = Matrix + Matrix.'
 
-
 end
 

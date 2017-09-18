@@ -1,6 +1,4 @@
 
-%%avvia definizione sistema e controllo prima!
-
 close all
 
 % LMI for the static regional full authority anti-windup
@@ -189,10 +187,7 @@ D_aw  = value(U)\value(X) % eq 22
 gamma = sqrt(value(gammaSquare))
 
 %%
-
-noteName = input('nome antiwindup sintesi:  ','s')
-
-save([ 'E:/D_antiwindup_' noteName ],'D_aw');
+save('F:/antiwind_up')
 
 
 

@@ -11,6 +11,7 @@
 \usepackage{amssymb}					   %for numbersets
 
 \usepackage{graphicx}
+\graphicspath{{img/}}                      % folder delle immagini
 \usepackage{epstopdf} 
 \usepackage{float}
 \usepackage{subfigure}
@@ -19,7 +20,7 @@
 \usepackage{multirow}
 
 \usepackage{color}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}            %colors
 
 \usepackage{listings} 
 
@@ -44,7 +45,7 @@
 %rapid file input
 \newcommand{\rs}[1]{\input{result/#1.txt}}
 
-%create new environment with enumeration
+%create new scatola environment with enumeration
 \newcounter{comment}[section]
 \newenvironment{comment}[1][]{\refstepcounter{comment}\par\medskip
 	\noindent \textbf{Comment~\thecomment. #1} }{\par}
@@ -62,15 +63,51 @@
 	\end{center}
  }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% date
+
 \date{today}
 
-%\usepackage{hyperref}
 
-%\usepackage{subfloat}
-%full packaging for image in eps finally
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% math shortcuts
 
 \newcommand{\tr}{^{{\bm \top}}}
 
 \newenvironment{sistema}%
 {\left\lbrace\begin{array}{@{}l@{}}}%
 	{\end{array}\right.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% section titling
+
+\usepackage[explicit]{titlesec} % per formato custom dei titoli dei capitoli
+
+%%% titles colors
+
+\definecolor{DarkBlue}{RGB}{0,0,102}
+\definecolor{DarkColdGray}{RGB}{100,100,150}
+
+\newcommand{\colorChapter}{LimeGreen} % color of the Chapter title 
+\newcommand{\colorSection}{DarkBlue}  % color of the Section title
+\newcommand{\colorSubsection}{Gray}   %color of the subsection title
+
+%%% titles format
+
+    \titleformat{\chapter}
+{\normalfont\Huge\bfseries}{}{1em}{\filcenter \textcolor{\colorChapter}{#1} \textcolor{\colorChapter}{\thechapter}}
+
+    \titleformat{\section}
+{\normalfont\large\bfseries}{\textcolor{\colorSection}{#1} }{1em}{\hfill \textcolor{\colorSection}{\thesection}}
+
+    \titleformat{\subsection}[wrap]
+{\normalfont\large\bfseries}{\textcolor{\colorSubsection}{#1}}{1em}{\\ \small \textcolor{\colorSubsection}{\thesubsection}}
+
+%%% titles spacing {left}{above}{below}
+
+\titlespacing*{\chapter}{0pt}{1em}{1em}
+\titlespacing*{\section}{0pt}{1em}{1em}
+\titlespacing*{\subsection}{0pt}{1em}{1em}
+
+%%% nomi ripetuti che si possono cambiare
+
+
+

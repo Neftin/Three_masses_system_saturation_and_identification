@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.28)  10 SEP 2017 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.28)  17 SEP 2017 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2017/01/01> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (c:/texlive/2016/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-(c:/texlive/2016/texmf-dist/tex/latex/base/bk11.clo
-File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(c:/texlive/2016/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -815,19 +815,10 @@ Package: newunicodechar 2012/11/12 v1.1 Defining Unicode characters
 )
 \c@comment=\count117
 \c@box=\count118
-)
-(c:/texlive/2016/texmf-dist/tex/latex/carlisle/plain.sty
-Package: plain 1996/04/22 Plain TeX emulation (DPC)
-\tabs@latex=\box32
-\tabsyet@latex=\box33
-\tabsdone@latex=\box34
-)
-(c:/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
+
 (c:/texlive/2016/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box35
+\ttl@box=\box32
 \beforetitleunit=\skip56
 \aftertitleunit=\skip57
 \ttl@plus=\dimen128
@@ -836,6 +827,18 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidth=\dimen130
 \titlewidthlast=\dimen131
 \titlewidthfirst=\dimen132
+)
+(c:/texlive/2016/texmf-dist/tex/latex/titlesec/wrap.tss
+File: wrap.tss 2016/03/15
+))
+(c:/texlive/2016/texmf-dist/tex/latex/carlisle/plain.sty
+Package: plain 1996/04/22 Plain TeX emulation (DPC)
+\tabs@latex=\box33
+\tabsyet@latex=\box34
+\tabsdone@latex=\box35
+)
+(c:/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (c:/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/04/23 3.9r The Babel package
@@ -863,32 +866,32 @@ LaTeX Warning: Unused global option(s):
 (./draft_1.aux)
 \openout1 = `draft_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 34.
  (c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Try loading font information for T1+Roboto-LF on input line
- 33.
+ 34.
 
 (c:/texlive/2016/texmf-dist/tex/latex/roboto/t1roboto-lf.fd
 File: T1Roboto-LF.fd 2015/09/15 (autoinst) Font definitions for T1/Roboto-LF.
 )
 LaTeX Font Info:    Font shape `T1/Roboto-LF/l/n' will be
-(Font)              scaled to size 10.95pt on input line 33.
+(Font)              scaled to size 10.0pt on input line 34.
 \c@mv@tabular=\count124
 \c@mv@boldtabular=\count125
 
@@ -907,15 +910,15 @@ LaTeX Font Info:    Font shape `T1/Roboto-LF/l/n' will be
 \everyMPtoPDFconversion=\toks30
 )
 \c@lstlisting=\count132
-LaTeX Info: Redefining \it@ocap on input line 33.
-LaTeX Info: Redefining \it@ccap on input line 33.
+LaTeX Info: Redefining \it@ocap on input line 34.
+LaTeX Info: Redefining \it@ccap on input line 34.
  (./pieces/pagina_iniziale.tex
 <img/logo_unitn_black_center.pdf, id=1, 293.095pt x 126.4725pt>
 File: img/logo_unitn_black_center.pdf Graphic file (type pdf)
 
 <use img/logo_unitn_black_center.pdf>
 Package pdftex.def Info: img/logo_unitn_black_center.pdf used on input line 8.
-(pdftex.def)             Requested size: 360.0pt x 155.34216pt.
+(pdftex.def)             Requested size: 345.0pt x 148.86958pt.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/l/n' will be
 (Font)              scaled to size 17.28pt on input line 14.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/l/n' will be
@@ -942,10 +945,10 @@ n_black_center.pdf>] [2
 
 ]
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 52.
+(Font)              scaled to size 24.88pt on input line 54.
  (./draft_1.toc
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 3.
+(Font)              scaled to size 10.0pt on input line 3.
 )
 \tf@toc=\write3
 \openout3 = `draft_1.toc'.
@@ -954,49 +957,43 @@ LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' will be
 
 ] (./pieces/the_benchmark.tex
 Capitolo 1.
-
-LaTeX Warning: Citation `coulouris' on page 2 undefined on input line 4.
-
-
-LaTeX Warning: Citation `dalal' on page 2 undefined on input line 6.
-
+<img/foto_setup.jpg, id=18, 722.7pt x 722.7pt>
+File: img/foto_setup.jpg Graphic file (type jpg)
+ <use img/foto_setup.jpg>
+Package pdftex.def Info: img/foto_setup.jpg used on input line 5.
+(pdftex.def)             Requested size: 172.49214pt x 172.5pt.
+LaTeX Font Info:    Font shape `T1/Roboto-LF/l/n' will be
+(Font)              scaled to size 12.0pt on input line 9.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 9.
+(Font)              scaled to size 12.0pt on input line 9.
+)
+(./draft_1.bbl [2
 
-LaTeX Warning: Citation `ictbusiness' on page 2 undefined on input line 13.
-
-
-LaTeX Warning: Citation `donoho' on page 2 undefined on input line 14.
-
-) (./draft_1.bbl [2
-
-]
+] [3 <./img/foto_setup.jpg>]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [3
+) [4
 
-] (./draft_1.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./draft_1.aux) ) 
 Here is how much of TeX's memory you used:
- 7576 strings out of 493013
- 101135 string characters out of 6136993
- 178584 words of memory out of 5000000
- 10908 multiletter control sequences out of 15000+600000
- 58416 words of font info for 84 fonts, out of 8000000 for 9000
+ 7577 strings out of 493013
+ 101249 string characters out of 6136993
+ 175951 words of memory out of 5000000
+ 10907 multiletter control sequences out of 15000+600000
+ 60212 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,35p,774b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2016/texmf-dist/fonts/enc/dvips/roboto/rbto_idpkzy.enc}{c:/texliv
-e/2016/texmf-dist/fonts/enc/dvips/roboto/rbto_v5svcm.enc}<c:/texlive/2016/texmf
--dist/fonts/type1/google/roboto/Roboto-Bold.pfb><c:/texlive/2016/texmf-dist/fon
-ts/type1/google/roboto/Roboto-Light.pfb>
-Output written on draft_1.pdf (5 pages, 131968 bytes).
+ 42i,7n,35p,774b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2016/texmf-dist/fonts/enc/dvips/roboto/rbto_idpk
+zy.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/roboto/rbto_v5svcm.enc}<c:/t
+exlive/2016/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb><c:/texlive/20
+16/texmf-dist/fonts/type1/google/roboto/Roboto-Light.pfb><c:/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on draft_1.pdf (6 pages, 228587 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 47 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

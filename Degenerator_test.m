@@ -27,11 +27,9 @@ sim('AW_1.slx')
 %%
 figure(5);
 h = plot(x3_output_comparison.time,x3_output_comparison.signals.values);
-set(h(3),'LineWidth',3);
-set(h(3),'LineStyle','--')
+set(h,'LineWidth',3);
 legend('Unconstrained','saturated','AW')
 xlabel('$t [s]$','interpreter','latex')
 ylabel('$x_2 [m]$','interpreter','latex')
 grid minor;
-
 
